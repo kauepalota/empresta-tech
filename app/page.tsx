@@ -1,46 +1,20 @@
 "use client"
 
-import {Header} from "@/components/header";
-import {SloganSection} from '@/components/slogan-section'
-import {Carousel, CarouselContent, CarouselItem} from "@/components/ui/carousel";
-import {FeaturedCatalog} from "@/components/featured-catalog";
+import { FeaturedCatalog } from "@/components/featured-catalog";
+import { Header } from "@/components/header";
+import { ImagesCarousel } from "@/components/images-carousel";
+import { SloganSection } from '@/components/slogan-section';
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
 export default function Home() {
   return (
     <>
-      <Header/>
+      <Header />
 
       <main>
-        <SloganSection/>
-
-        <section>
-          <Carousel
-            plugins={[
-              Autoplay({
-                delay: 2000
-              })
-            ]}>
-            <CarouselContent>
-              <CarouselItem className={"[&>img]:w-full"}>
-                <div className={"w-full h-full"}>
-                  <img src={"/M2.png"} alt={"M2"} />
-                </div>
-              </CarouselItem>
-              <CarouselItem className={"[&>img]:w-full"}>
-                <div className={"w-full h-full"}>
-                  <img src={"/M2.png"} alt={"M2"} />
-                </div>
-              </CarouselItem>
-              <CarouselItem className={"[&>img]:w-full"}>
-                <div className={"w-full h-full"}>
-                  <img src={"/M2.png"} alt={"M2"} />
-                </div>
-              </CarouselItem>
-            </CarouselContent>
-          </Carousel>
-        </section>
-
+        <SloganSection />
+        <ImagesCarousel />
         <FeaturedCatalog />
       </main>
     </>
