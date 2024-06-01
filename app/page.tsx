@@ -1,7 +1,10 @@
+"use client"
+
 import {Header} from "@/components/header";
 import {SloganSection} from '@/components/slogan-section'
 import {Carousel, CarouselContent, CarouselItem} from "@/components/ui/carousel";
 import {FeaturedCatalog} from "@/components/featured-catalog";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function Home() {
   return (
@@ -12,7 +15,12 @@ export default function Home() {
         <SloganSection/>
 
         <section>
-          <Carousel>
+          <Carousel
+            plugins={[
+              Autoplay({
+                delay: 2000
+              })
+            ]}>
             <CarouselContent>
               <CarouselItem className={"[&>img]:w-full"}>
                 <div className={"w-full h-full"}>
