@@ -23,13 +23,13 @@ export function MainNavbar() {
           <Link className={LinkVariants({ variant: "default" })} href={"/catalog/all"}>Catálogo</Link>
         </li>
         <li>
-          <Link className={LinkVariants({ variant: "default" })} href={"/how-it-works"}>Como funciona</Link>
+          <Link className={LinkVariants({ variant: "default" })} href={"/#"}>Como funciona</Link>
         </li>
         <li>
-          <Link className={LinkVariants({ variant: "default" })} href={"/support"}>Central de ajuda</Link>
+          <Link className={LinkVariants({ variant: "default" })} href={"/#"}>Central de ajuda</Link>
         </li>
         <li>
-          <Link className={LinkVariants({ variant: "outline" })} href={"/dashboard"}>
+          <Link className={LinkVariants({ variant: "outline" })} href={"/#"}>
             <UserIcon className="mr-2 size-4" />
             Já sou cliente
           </Link>

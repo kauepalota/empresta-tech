@@ -1,11 +1,11 @@
 'use client'
 
+import { CatalogPreviewCard } from '@/components/catalog-preview-card';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { FeaturedTag, getCatalog, getFeaturedTags, Product } from '@/data/catalog';
 import { formatMoney } from '@/lib/formatter';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -89,37 +89,7 @@ export default function CatalogPage(
         <div className='max-w-[1200px] md:mx-auto'>
           <div className='grid px-6 md:pb-24 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 py-6'>
             {catalog && catalog.map(item => (
-              <Card key={item.id} className="hover:shadow-md">
-                <div className="relative min-h-[190px]">
-                  <img src={item.imageUrl} alt={item.name} className={"w-full"} />
-                </div>
-
-                <CardContent>
-                  <div className="overflow-hidden">
-                    <h3 className={"text-lg font-bold capitalize truncate"}>{item.name}</h3>
-                    <div>
-                      <p className={"text-sm text-muted-foreground truncate capitalize"}>{item.description}</p>
-                    </div>
-                  </div>
-                  <div className="pt-2">
-                    <p className="text-xs">parcelas a partir de</p>
-                    <div className="flex gap-2">
-                      {item.plans && item.plans.find(plan => plan.duration == 12) && (
-                        <>
-                          {item.plans.find(plan => plan.duration == 12)!!.discountedInstallmentPrice !== item.plans.find(plan => plan.duration == 12)!!.installmentPrice ? (
-                            <>
-                              <h2 className="text-sm text-muted-foreground line-through">{formatMoney(item.plans.find(plan => plan.duration == 12)!!.installmentPrice)}</h2>
-                              <h2 className="text-sm font-bold text-green-700">{formatMoney(item.plans.find(plan => plan.duration == 12)!!.discountedInstallmentPrice)}</h2>
-                            </>
-                          ) : (
-                            <h2 className="text-sm font-bold text-green-700">{formatMoney(item.plans.find(plan => plan.duration == 12)!!.installmentPrice)}</h2>
-                          )}
-                        </>
-                      )}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <CatalogPreviewCard key={item.id} product={item} />
             ))}
           </div>
         </div>

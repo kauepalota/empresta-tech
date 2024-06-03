@@ -9,7 +9,7 @@ export type Product = {
   tags: string[];
 }
 
-type ProductPricePlan = {
+export type ProductPricePlan = {
   duration: number;
 
   totalPrice: number;
@@ -157,23 +157,23 @@ export function getCatalog(): Product[] {
           {
             duration: 12,
             totalPrice: 2999.00,
-            discounttedPrice: 2699.10,
+            discounttedPrice: 2999.00,
             installmentPrice: 249.92,
-            discountedInstallmentPrice: 224.92
+            discountedInstallmentPrice: 249.92
           },
           {
             duration: 6,
             totalPrice: 1799.40,
-            discounttedPrice: 1619.46,
+            discounttedPrice: 1799.40,
             installmentPrice: 299.90,
-            discountedInstallmentPrice: 269.91
+            discountedInstallmentPrice: 299.90
           },
           {
             duration: 3,
             totalPrice: 1079.64,
-            discounttedPrice: 971.68,
+            discounttedPrice: 1079.64,
             installmentPrice: 359.88,
-            discountedInstallmentPrice: 323.89
+            discountedInstallmentPrice: 359.88
           }
         ]
       }
