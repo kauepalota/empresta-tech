@@ -1,11 +1,9 @@
 'use client'
 
 import { CatalogPreviewCard } from '@/components/catalog-preview-card';
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
-import { Card, CardContent } from '@/components/ui/card';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { FeaturedTag, getCatalog, getFeaturedTags, Product } from '@/data/catalog';
-import { formatMoney } from '@/lib/formatter';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
