@@ -36,7 +36,16 @@ export function FeaturedCatalog() {
                         <p className="text-xs">parcelas a partir de</p>
                         <div className="flex gap-2">
                           {item.plans && item.plans.find(plan => plan.duration == 12) && (
-                            <h2 className="text-sm font-bold text-green-700">{formatMoney(item.plans.find(plan => plan.duration == 12)!!.discountedInstallmentPrice)}</h2>
+                            <>
+                              {item.plans.find(plan => plan.duration == 12)!!.discountedInstallmentPrice !== item.plans.find(plan => plan.duration == 12)!!.installmentPrice ? (
+                                <>
+                                  <h2 className="text-sm text-muted-foreground line-through">{formatMoney(item.plans.find(plan => plan.duration == 12)!!.installmentPrice)}</h2>
+                                  <h2 className="text-sm font-bold text-green-700">{formatMoney(item.plans.find(plan => plan.duration == 12)!!.discountedInstallmentPrice)}</h2>
+                                </>
+                              ) : (
+                                <h2 className="text-sm font-bold text-green-700">{formatMoney(item.plans.find(plan => plan.duration == 12)!!.installmentPrice)}</h2>
+                              )}
+                            </>
                           )}
                         </div>
                       </div>
@@ -51,8 +60,8 @@ export function FeaturedCatalog() {
 
       <div className="flex justify-center">
         <Link href={"/catalog/all"}>
-          <Button variant={"outline"}>
-            Ver todos os computadores
+          <Button size={"lg"} className="rounded-2xl" variant={"outline"}>
+            Ver catálogo
             <CircleArrowRight size={24} className={"ml-2"} />
           </Button>
         </Link>

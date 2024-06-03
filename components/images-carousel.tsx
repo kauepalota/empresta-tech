@@ -1,3 +1,5 @@
+'use client'
+
 import { getCarouselImages } from "@/data/images-carousel";
 import Autoplay from 'embla-carousel-autoplay'
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";

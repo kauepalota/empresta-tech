@@ -1,4 +1,4 @@
-type Product = {
+export type Product = {
   id: number;
   name: string;
   description: string;
@@ -6,6 +6,7 @@ type Product = {
   isFeatured: boolean;
 
   plans: ProductPricePlan[];
+  tags: string[];
 }
 
 type ProductPricePlan = {
@@ -18,6 +19,37 @@ type ProductPricePlan = {
   discountedInstallmentPrice: number;
 }
 
+export type FeaturedTag = {
+  id: string;
+  name: string;
+  imageUrl: string;
+}
+
+export function getFeaturedTags(): FeaturedTag[] {
+  return [
+    {
+      id: 'gamer',
+      name: 'Gamer',
+      imageUrl: '/tags/gamer.png'
+    },
+    {
+      id: 'design',
+      name: 'Design',
+      imageUrl: '/tags/design.png'
+    },
+    {
+      id: 'programming',
+      name: 'Programação',
+      imageUrl: '/tags/programming.png'
+    },
+    {
+      id: 'student',
+      name: 'Estudante',
+      imageUrl: '/tags/student.png'
+    }
+  ]
+}
+
 export function getCatalog(): Product[] {
   return (
     [
@@ -27,6 +59,7 @@ export function getCatalog(): Product[] {
         description: "Placa de video RTX 3060, Tela 16”, Capacidade 512GB SSD, Memória RAM 16GB, Processador Intel Core i7 12º geração",
         imageUrl: '/notebook_acer_predator_triton.png',
         isFeatured: true,
+        tags: ['gamer', 'notebook'],
         plans: [
           {
             duration: 12,
@@ -57,6 +90,7 @@ export function getCatalog(): Product[] {
         description: "Tela 13”, Capacidade 256GB SSD, Memória RAM 8GB, Processador Apple M2",
         imageUrl: '/macbook_m1.png',
         isFeatured: true,
+        tags: ['design', 'programming', 'coding', 'notebook'],
         plans: [
           {
             duration: 12,
@@ -87,6 +121,7 @@ export function getCatalog(): Product[] {
         description: "256GB - Chip M1 (8 núcleos), SSD, 8GB RAM",
         imageUrl: '/macbook_m1.png',
         isFeatured: true,
+        tags: ['notebook', 'design', 'programming', 'coding'],
         plans: [
           {
             duration: 12,
@@ -117,6 +152,7 @@ export function getCatalog(): Product[] {
         description: 'Processador Intel Core i5 11a gen, 16GB Memória RAM 512GB SSD',
         imageUrl: '/notebook_acer_vero.webp',
         isFeatured: true,
+        tags: ['notebook', 'work', 'home-office', 'student'],
         plans: [
           {
             duration: 12,

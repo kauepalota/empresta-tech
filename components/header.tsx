@@ -9,8 +9,7 @@ export function Header() {
       <header className="bg-background w-full h-14 shadow-md">
         <div className="container flex h-full justify-between items-center">
           <Link href={"/"}>
-            <span>Logo</span>
-            { /* <Image src={"vercel.svg"} alt="Next.js Logo" width={100} height={50} /> */ }
+            <Image src={"/logo.png"} alt="Next.js Logo" width={200} height={25} />
           </Link>
 
           <MobileNavbar />
