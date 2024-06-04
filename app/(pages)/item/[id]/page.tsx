@@ -93,7 +93,7 @@ export default function ProductPage({
                     <button onClick={() => setSelectedPlan(plan)} key={product.id + "_" + plan.duration} data-state={selectedPlan?.duration == plan.duration ? 'on' : 'off'} className="relative disabled:pointer-events-none disabled:bg-neutral-300 disabled:text-neutral-500 hover:transition-all
                      box-border outline-1 outline outline-black/[.54] rounded-md 
                      text-base min-w-[100px] font-bold p-4 hover:outline-green-500 data-[state=on]:outline-green-500 data-[state=on]:outline-2 
-                     leading-none bg-transparent text-neutral-800 flex justify-between px-6 h-[113px]">
+                     leading-none bg-transparent transition-colors text-neutral-800 flex justify-between px-6 h-[113px]">
                       {plan.duration == 12 ? (
                         <div className="flex flex-col h-full text-left justify-between">
                           <div className="flex rounded-lg text-green-700 capitalize tracking-widest font-bold bg-green-100 gap-1 justify-center items-center px-2 py-0.5">
