@@ -1,6 +1,6 @@
 export function SloganSection() {
   return (
-    <section className="text-xs text-opacity-90 font-bold py-4 flex w-full items-center justify-center bg-muted shadow-sm">
+    <section className="flex w-full items-center justify-center bg-muted py-4 text-xs font-bold text-opacity-90 shadow-sm">
       <span>A Tecnologia que Você Precisa, Quando Você Precisa.</span>
     </section>
   )
