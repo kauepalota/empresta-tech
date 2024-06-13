@@ -10,6 +10,7 @@ import { Input } from '@/components/ui/input'
 import { format } from 'date-fns'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+import { ptBR } from 'date-fns/locale'
 import {
   Popover,
   PopoverContent,
@@ -119,6 +120,7 @@ export function AddDocumentSection({ onSubmit }: AddDocumentProps) {
                     selected={field.value}
                     captionLayout="dropdown-buttons"
                     onSelect={field.onChange}
+                    locale={ptBR}
                     initialFocus
                     fromYear={2024 - 18}
                     toYear={2024}
