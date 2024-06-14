@@ -77,13 +77,13 @@ export default function CheckoutPage({
               <AccordionTrigger>Endereço</AccordionTrigger>
 
               <AccordionContent className="p-2">
-                <AddAddressSection onSubmit={() => setValue('')} />
+                <AddAddressSection onSubmit={() => {}} />
               </AccordionContent>
             </AccordionItem>
           </Accordion>
         </div>
 
-        <div>
+        <div className="md:order-2">
           <div className="col-span-1 max-h-min space-y-4 rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
             <h2 className="text-xl font-bold">Pedido</h2>
             <div className="flex items-center gap-4">

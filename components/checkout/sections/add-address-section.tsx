@@ -18,17 +18,8 @@ const addAddressSchema = z.object({
     required_error: 'O endereço é obrigatório',
   }),
   number: z.coerce.number({
+    invalid_type_error: 'O número é inválido',
     required_error: 'O número é obrigatório',
-  }),
-  complement: z.string().nullable(),
-  cep: z.string({
-    required_error: 'O CEP é obrigatório',
-  }),
-  city: z.string({
-    required_error: 'A cidade é obrigatória',
-  }),
-  state: z.string({
-    required_error: 'O estado é obrigatório',
   }),
 })
 

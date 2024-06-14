@@ -35,7 +35,10 @@ export function MainNavbar() {
           </Link>
         </li>
         <li>
-          <Link className={LinkVariants({ variant: 'outline' })} href={'/#'}>
+          <Link
+            className={LinkVariants({ variant: 'outline' })}
+            href={'/dashboard'}
+          >
             <UserIcon className="mr-2 size-4" />
             Já sou cliente
           </Link>
